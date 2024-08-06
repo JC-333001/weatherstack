@@ -1,0 +1,815 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+header {
+  background-image: url(https://weatherstack.com/site_images/mountains.svg),
+    linear-gradient(135deg, #1f4e69 0, #164058 100%);
+  background-size: cover;
+  background-position-y: -120px;
+  color: white;
+}
+
+#nav_container {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  padding: 20px 0;
+}
+
+#my_nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}
+
+#header_main {
+  padding: 150px 0px 200px 0px;
+  text-align: center;
+  /* width: 1310px; */
+}
+
+.scroll {
+  background-color: #164058;
+  margin: 0;
+  z-index: 100;
+  /*为什么不加的话 wawa图标和happy customer就会显示出来？？？？？？？*/
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 10px;
+  margin: 0 0.6em;
+  white-space: nowrap;
+}
+
+li a,
+div a {
+  text-decoration: none;
+  color: white;
+}
+
+#login {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+#signup,
+#start_button {
+  background-color: #f47b21;
+  border-radius: 5px;
+}
+
+#status {
+  color: white;
+}
+
+#status::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #47c652;
+  border-radius: 50%;
+  margin-right: 0.6em;
+}
+
+summary {
+  width: 30em;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+#billing {
+  display: block;
+  margin-top: 40px;
+}
+
+#billing a {
+  position: relative;
+  background: #fff;
+  padding: 10px 10px 11px 30px;
+  border-radius: 5px;
+  width: 150px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+#billing a:not(.selected):hover:before {
+  content: "☑";
+}
+
+#billing a:before {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  margin-right: 10px;
+  vertical-align: middle;
+  content: "☐";
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+#billing a.selected:before {
+  content: "☑";
+}
+
+#billing a.monthly {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#billing a.yearly {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -3px;
+  padding-right: 6px;
+  text-decoration: none;
+  color: #15394c;
+}
+
+#billing a.selected {
+  background: #15394c;
+  color: #fff;
+}
+
+#billing a.yearly:after {
+  position: absolute;
+  right: -15px;
+  top: -16px;
+  background: #8a9bae;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px 4px 8px;
+  border-radius: 3px;
+  content: "up to 15% Discount";
+  font-weight: 600;
+}
+
+#billing a.selected.yearly:after {
+  background: #47c652;
+}
+
+.pricing {
+  padding: 40px 0 65px;
+  text-align: center;
+  background: #fff;
+}
+
+.pricing ul.subscriptions {
+  display: flex;
+  justify-content: center;
+  margin: -180px 0 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  color: rgba(22, 34, 47, 1);
+}
+
+ul.subscriptions > li {
+  text-align: left;
+  display: inline-block;
+  width: 211px;
+  margin-right: 5px;
+  margin-left: 5px;
+  position: relative;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+ul.subscriptions li .main_container {
+  border-radius: 5px;
+  padding-bottom: 10px;
+  background: #ebeff4;
+  text-align: center;
+}
+
+.mc_header {
+  padding: 35px 0 15px;
+}
+
+.short_description {
+  height: 100px;
+  padding: 15px 15px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.price {
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: normal;
+}
+
+.price span {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.signup_link {
+  background: #dde1e7;
+  padding: 10px 0px;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #848484;
+  width: 90%;
+  border-radius: 3px;
+}
+
+.price small {
+  font-size: 12px;
+}
+
+small.yearly_price {
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.yearly_data {
+  margin-top: 10px;
+}
+
+.features_container ul {
+  margin: 0 -7px 0 0;
+  padding: 0 5px;
+  list-style: none;
+  border-right: 1px solid #dde1e7;
+  font-weight: 300;
+}
+
+.features_container ul li::before {
+  padding: 10px;
+}
+
+.feature_api_requests::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f121";
+}
+
+.feature_support::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f2a0";
+}
+
+.feature_current::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f2f9";
+}
+
+.currency_module::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\24";
+}
+
+.feature_autocomplete::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f08d";
+}
+
+.feature_autocomplete::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f08d";
+}
+
+.feature_https::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f132";
+}
+
+.feature_astronomy::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0ac";
+}
+
+.feature_hourbyhour::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f017";
+}
+
+.feature_history::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f363";
+}
+
+.feature_forecast::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f073";
+}
+
+.feature_bulk::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\e4e3";
+}
+
+.feature_languages::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f075";
+}
+
+.feature_custom::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f095";
+}
+
+.mc_header heading {
+  font-size: 18px;
+}
+
+.heading_icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.enterprise a {
+  background: #f47b21;
+  color: #fff;
+}
+
+li.enterprise {
+  background: #15394c;
+  width: 230px;
+  color: #fff;
+}
+
+li.enterprise .main_container {
+  background: 0 0 !important;
+}
+
+li.enterprise small.yearly_price {
+  color: #fff;
+}
+
+.platinum_support {
+  background: white;
+  padding-bottom: 30px;
+  padding-top: 0px;
+}
+
+.platinum_pricing_support {
+  text-align: center;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 660px;
+  height: 40%;
+  border-radius: 40px;
+}
+
+.support_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.diamond {
+  display: block;
+  width: 130px;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.platinum_right_section h3 {
+  font-weight: 450;
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+}
+
+.platinum_right_section p {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.find_out {
+  background-color: #f47b21;
+  border-radius: 35px;
+  max-width: 140px;
+  height: 40px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 16px;
+}
+
+.find_out a {
+  line-height: 40px;
+  font-size: 14px;
+  color: white;
+  font-weight: 550;
+}
+
+#customers ul {
+  /* background-color: #eff2f5; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#customers li img {
+  display: inline-block;
+  margin: 0px 25px;
+  height: 50px;
+  object-fit: contain;
+  /* padding-right: 30px; */
+}
+
+#customer1 {
+  position: relative;
+  left: -40px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#customer2 img {
+  width: 100px;
+}
+
+#customer3 img {
+  width: 120px;
+}
+
+#customer4 img {
+  width: 80px;
+}
+
+#customer5 img {
+  width: 90px;
+  position: relative;
+  top: -5px;
+}
+
+#customer6 img {
+  width: 110px;
+}
+
+.features_roundup {
+  width: 100%;
+  background: #eff2f5
+    url(https://weatherstack.com/site_images/world_map_vector_objects.svg);
+  background-size: 950px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-position-y: 110px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature_container {
+  width: 1100px;
+}
+
+.features_roundup h4 {
+  font-size: 25px;
+  line-height: normal;
+  margin-top: 40px;
+  font-weight: 300;
+  font-family: Promo, Helvetica, Arial, sans-serif;
+  padding-bottom: 280px;
+  border-bottom: 1px dashed #8a9bae;
+}
+
+.features_roundup .row:first-of-type {
+  padding-top: 50px;
+}
+
+section.features_roundup .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  position: relative;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 125px;
+  padding-bottom: 25px;
+}
+
+.features_roundup .row .heading:before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 60px;
+  display: inline-block;
+  font-weight: 400;
+  margin-right: 10px;
+  content: "\f017";
+  top: 20px;
+  left: 10px;
+  position: absolute;
+  color: #a4b6c5;
+}
+
+.features_roundup .row:first-of-type .heading:before {
+  top: 45px;
+  left: 10px;
+  position: absolute;
+}
+
+.row_left {
+  width: 600px;
+}
+
+.row_left .heading {
+  display: block;
+  font-size: 20px;
+  font-weight: 450;
+  margin-bottom: 20px;
+}
+
+.included_in {
+  border-left: 1px dashed #a4b6c5;
+  width: 250px;
+  padding-left: 50px;
+}
+
+.included_in :first-child {
+  display: block;
+  font-weight: bold;
+  background: #416376;
+  width: 80px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.included_in span:nth-of-type(2) {
+  display: block;
+  font-weight: 300;
+  max-width: 200px;
+  font-size: 12px;
+}
+
+section.faq {
+  color: rgba(22, 34, 47, 1);
+  padding: 40px 0 10px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.faq .container {
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.faq h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.inline_left,
+.inline_right {
+  margin-right: 80px;
+  width: 700px;
+}
+
+.topic ul {
+  list-style: none;
+}
+
+.topic ul li p.question {
+  position: relative;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #dedee1;
+  cursor: pointer;
+}
+
+.topic ul li p.answer {
+  display: none;
+  background: #ebeff4;
+  padding: 20px 15px;
+  line-height: 23px;
+  margin-bottom: 0;
+}
+
+.topic h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: 400;
+  color: #949494;
+}
+
+.topic ul li p.question:before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\2b";
+  position: absolute;
+  left: 450px;
+  color: #949494;
+}
+
+.container .topic a {
+  padding: 40px 0;
+  display: inline-block;
+  font-size: 14px;
+  width: 300px;
+  color: #7e8e9e;
+}
+
+.container .topic > a:after {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: relative;
+  left: 40px;
+  content: "\f002";
+}
+
+#cta {
+  padding: 45px 30px 50px 30px;
+  font-family: Promo, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #eef2f5;
+}
+
+#cta span:after {
+  font-size: 20px;
+  display: inline-block;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-top: 0;
+  content: "\2192";
+}
+
+#cta a {
+  background-color: #f47b21;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#footer_container {
+  width: 1200px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #164058;
+  padding: 40px 0;
+}
+
+#upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#social_logo {
+  width: 200px;
+  height: 100px;
+}
+
+/* #weatherstack_logo_footer {
+
+} */
+
+#weatherstack_logo_footer img {
+  height: 35px;
+  /* height: 40%;  为什么高度设置为百分比的时候图片高度不会变小 */
+  object-fit: fill;
+}
+
+#socail_media_logos {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#socail_media_logos li {
+  /* width: 15%; 为什么包含在里面的图片不会变小 */
+  list-style: none;
+  display: inline-block;
+}
+
+#socail_media_logos li img {
+  /* object-fit: contain; */
+  width: 25px;
+  /* height: 20px; */
+}
+
+.footer_heading {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+.footer_info {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.footer_info a:hover {
+  text-decoration: underline;
+}
+
+.index {
+  list-style: none;
+}
+
+#lower {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#copyright-text,
+#copyright-link {
+  font-weight: 280;
+  color: white;
+}
+
+#copyright-link {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+#copyright-text {
+  font-size: 12px;
+}
+
+#copyright-text a {
+  text-decoration: underline;
+}
+
+#copyright-link a {
+  padding: 0px 5px;
+}
+
+#copyright-link a:hover {
+  text-decoration: underline;
+}
