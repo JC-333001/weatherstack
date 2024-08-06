@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for (let i = 0; i < 4; i++) {
+      //   let str = "";
+      //   for (let j = 0; j < 4; j++) {
+      //     str += "*";
+      //   }
+      //   console.log(str);
+      // }
+
+      // console.log("----------------");
+
+      // for (let i = 4; i > 0; i--) {
+      //   let str = "";
+      //   for (let j = 0; j < i; j++) {
+      //     str += "*";
+      //   }
+      //   console.log(str);
+      // }
+
+      function findFruitPrice(fruitName) {
+        return -1;
+      }
+
+      function canGoToPark(mathScore, chineseScore) {
+        return mathScore == 100 && chineseScore == 100
+          ? "Go to park"
+          : "Stay at home";
+      }
+
+      function canGoToDisney(mathScore, chineseScore, rank) {
+        return mathScore == 100 && chineseScore == 100 && rank < 90
+          ? "Go to park"
+          : "Wait for next year";
+      }
+
+      function findGreaterValue() {
+        let num1 = prompt("first number = ");
+        let num2 = prompt("second number = ");
+        return num1 >= num2 ? num1 : num2;
+      }
+
+      function canUseApp(age) {
+        age <= 18 ? alert("Access denied") : alert("Access accepted");
+      }
+
+      function pickReward(bonus) {
+        bonus > 2
+          ? console.log("三亚")
+          : bonus > 1
+          ? console.log("省内")
+          : bonus > 0.5
+          ? console.log("衣服")
+          : console.log("上班");
+      }
+
+      function checkPurchaseStatus(num) {
+        switch (num) {
+          case 1:
+            return "unpaid";
+          case 2:
+            return "paid";
+          case 3:
+            return "prepared";
+          case 4:
+            return "shipped";
+          case 5:
+            return "delivering";
+          case 6:
+            return "delivered";
+          default:
+            return "pending";
+        }
+      }
+      console.log(checkPurchaseStatus(1));
+    </script>
+  </body>
+</html>

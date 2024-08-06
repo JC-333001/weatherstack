@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weatherstack - Real-Time World Weather Rest API</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav id="my_nav">
+        <div id="nav_container">
+          <div id="logo">
+            <a title="weatherstack Logo" href="/"
+              ><img
+                alt="weatherstack Logo"
+                width="202"
+                height="28"
+                src="https://weatherstack.com/site_images/weatherstack_logo_white.png"
+            /></a>
+          </div>
+
+          <ul>
+            <li><a title="Pricing Plans" href="/pricing.html">Pricing</a></li>
+            <li>
+              <a title="API Documentation" href="">Documentation</a>
+            </li>
+            <li><a title="Frequently Asked Questions" href="">FAQ</a></li>
+            <li>
+              <a title="Affiliate Program" href="">Affiliates</a>
+            </li>
+            <li>
+              <a title="apilayer Blog" href="https://blog.weatherstack.com/"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                title="weatherstack System Status"
+                target="_blank"
+                href="https://status.weatherstack.com/"
+                id="status"
+                >Status</a
+              >
+            </li>
+
+            <li id="login">
+              <a title="Log in to your account" href="/login">Log In</a>
+            </li>
+            <li id="signup">
+              <a title="Start using the API" href="/signup/free"
+                >SIGN UP FREE</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section id="header_main">
+        <div id="header_container">
+          <summary id="intro">
+            <h1>
+              Real-Time & Historical <br />
+              World Weather Data API
+            </h1>
+            <h2>
+              Retrieve instant, accurate weather information for<br />any
+              location in the world in lightweight JSON format
+            </h2>
+            <div id="trust">
+              <i class="fa-solid fa-trophy"></i
+              ><span>Trusted by 75,000 companies worldwide</span>
+            </div>
+            <div id="start_api">
+              <a id="start_button" href="">START USING THE API</a>
+              <span id="free">- It's free</span>
+            </div>
+          </summary>
+          <div id="weather_anime">
+            <h3 id="weather_location">City, State, Country</h3>
+            <section id="weather_now">
+              <div id="now_left">
+                <div id="weather_now_anime">
+                  <i class="partly_cloudy"></i>
+                </div>
+                <span id="weather_name">Sunny</span>
+              </div>
+              <div id="tempreture">16°c</div>
+              <div id="now_right">
+                <span>Wind: 6.1 kmph</span>
+                <span>Precip: 0.00 mm</span>
+                <span>Pressure: 1025.0 mb</span>
+              </div>
+            </section>
+            <section id="weather_forecast">
+              <ul>
+                <li id="day1">
+                  <span id="mon">MON</span>
+                  <i class="full_sun"></i>
+                  <span>20°c</span>
+                </li>
+                <li id="day2">
+                  <span id="tue">TUE</span>
+                  <i class="fully_cloudy"></i>
+                  <span>18°c</span>
+                </li>
+                <li id="day3">
+                  <span id="wed">WED</span>
+                  <i class="partly_cloudy"></i>
+                  <span>18°c</span>
+                </li>
+                <li id="day4">
+                  <span id="thu">THU</span>
+                  <i class="full_sun"></i>
+                  <span>18°c</span>
+                </li>
+                <li id="day5">
+                  <span id="fri">FRI</span>
+                  <i class="fully_cloudy"></i>
+                  <span>18°c</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section id="customers">
+      <ul>
+        <li id="customer1">Happy Customers</li>
+        <li id="customer2">
+          <img
+            src="https://weatherstack.com/site_images/client_deloitte.svg"
+            alt="Deloitte"
+            width="100px"
+          />
+        </li>
+        <li id="customer3">
+          <img
+            src="https://weatherstack.com/site_images/client_microsoft.svg"
+            alt="Microsoft"
+          />
+        </li>
+        <li id="customer4">
+          <img
+            src="https://weatherstack.com/site_images/client_warnerbros.svg"
+            alt="Warnerbros"
+          />
+        </li>
+        <li id="customer5">
+          <img
+            src="https://weatherstack.com/site_images/client_wawa.svg"
+            alt="Wawa"
+          />
+        </li>
+        <li id="customer6">
+          <img
+            src="https://weatherstack.com/site_images/client_schneider.svg"
+            alt="schneider"
+          />
+        </li>
+        <li id="customer7">
+          <img
+            src="https://weatherstack.com/site_images/client_ericsson_2.svg"
+            alt="ericsson"
+          />
+        </li>
+      </ul>
+    </section>
+    <section id="adv">
+      <div id="boxes">
+        <div id="box_realtime">
+          <i class="fa-solid fa-cloud-arrow-up adv_logo"></i>
+          <h5 class="heading">Real-Time, History, Forecast</h5>
+          <p class="intro">
+            Our API covers global weather data across the board — from a
+            multi-year history all the way to live information and accurate
+            weather forecasts.
+          </p>
+        </div>
+
+        <div id="box_locations">
+          <i class="fa-solid fa-thumbtack adv_logo"></i>
+          <h5 class="heading">Millions of Locations</h5>
+          <p class="intro">
+            Make use of live or hour-by-hour weather data for millions of cities
+            and towns worldwide, supporting a variety methods to look up any
+            location.
+          </p>
+        </div>
+
+        <div id="box_uptime">
+          <i class="fa-solid fa-gauge adv_logo"></i>
+          <h5 class="heading">Rock-Solid Uptime & Speed</h5>
+          <p class="intro">
+            Powered by best-in-class cloud infrastructure, our API delivers data
+            in milliseconds around the clock with an uptime of nearly 100%.
+          </p>
+        </div>
+
+        <div id="box_price">
+          <i class="fa-solid fa-tags adv_logo"></i>
+          <h5 class="heading">Start Free, Upgrade Later</h5>
+          <p class="intro">
+            Start testing the API immediately by signing up for our Free Plan.
+            You can always upgrade later — no strings attached.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="global_data">
+      <div id="global_data_container">
+        <summary id="data_sum">
+          <h3>Access to Global Weather Data, Developer-friendly</h3>
+          <span>
+            Get instant access to accurate weather data for any geo-point
+            <br />in the world and enjoy a rich set of capabilities:
+          </span>
+          <ul id="api_list">
+            <li class="api">
+              <i class="fa-solid fa-arrows-spin api_icon"></i>
+              <span class="api_type">Real-Time Weather API</span>
+            </li>
+            <li class="api">
+              <i class="fa-solid fa-clock-rotate-left api_icon"></i>
+              <span class="api_type">Historical Weather API</span>
+            </li>
+            <li class="api">
+              <i class="fa-regular fa-calendar-check api_icon"></i>
+              <span class="api_type">Weather Forecasts API</span>
+            </li>
+            <li class="api">
+              <i class="fa-solid fa-sign-hanging api_icon"></i>
+              <span class="api_type">Location Autocomplete</span>
+            </li>
+            <li class="api">
+              <i class="fa-solid fa-layer-group api_icon"></i>
+              <span class="api_type">Bulk API Endpoint</span>
+            </li>
+          </ul>
+        </summary>
+        <div id="map">
+          <img
+            src="https://weatherstack.com/site_images/world_map_vector.svg"
+            alt="Global weather data"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="example">
+      <span id="ex_title">Example</span>
+      <h3>Complete Weather Data Coverage</h3>
+      <span id="ex_sum"
+        >Get years of historical weather data, request real-time weather
+        information or make use of accurate weather forecasts.</span
+      >
+      <ul id="data_exs">
+        <li class="data">
+          <a href="" class="data_request">Current Weather</a>
+        </li>
+        <li class="data">
+          <a href="" class="data_request">Weather History</a>
+        </li>
+        <li class="data">
+          <a href="" class="data_request">Weather Forecast</a>
+        </li>
+      </ul>
+      <div id="json_data">
+        <pre class="prettyprint" data-endpoint="current">
+          <code>
+{
+    "request": {
+        "type": "City",
+        "query": "San Francisco, United States of America",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "San Francisco",
+        "country": "United States of America",
+        "region": "California",
+        "lat": "37.775",
+        "lon": "-122.418",
+        "timezone_id": "America/Los_Angeles",
+        "localtime": "2019-09-03 05:35",
+        "localtime_epoch": 1567488900,
+        "utc_offset": "-7.0"
+    },
+    "current": {
+        "observation_time": "12:35 PM",
+        "temparature": 16,
+        "weather_code": 122,
+        "weather_icons": [
+            "https://assets.weatherstack.com/images/symbol.png"
+        ],
+        "weather_descriptions": [
+            "Overcast"
+        ],
+    "wind_speed": 17,
+    "wind_degree": 260,
+    "wind_dir": "W",
+    "pressure": 1016,
+    "precip": 0,
+    "humidity": 87,
+    "cloudcover": 100,
+    "feelslike": 16,
+    "uv_index": 0,
+    "visibility": 16
+    }
+}
+          </code>
+        </pre>
+      </div>
+
+      <div id="feature_container">
+        <div id="more_features">
+          <ul>
+            <li class="feature">
+              <span class="heading"
+                ><i class="fa-solid fa-database feature_icon"></i>Reliable Data
+                Sources</span
+              >
+              <p>
+                Powered by a strong backbone of data sources, our weather data
+                API comes with the highest level of reliability, consistency and
+                accuracy.
+              </p>
+            </li>
+
+            <li class="feature">
+              <span class="heading"
+                ><i class="fa-solid fa-gauge feature_icon"></i>Lightning-fast
+                Response</span
+              >
+              <p>
+                Weather data is delivered in lightweight JSON format to ensure a
+                high level of speed and compatibility with any programming
+                language.
+              </p>
+            </li>
+
+            <li class="feature">
+              <span class="heading"
+                ><i class="fa-solid fa-arrow-trend-up feature_icon"></i>Scalable
+                Infrastructure</span
+              >
+              <p>
+                Our REST API is backed by scalable cloud infrastructure built
+                and maintained by apilayer, capable of handling billions of
+                requests per day.
+              </p>
+            </li>
+
+            <li class="feature">
+              <span class="heading"
+                ><i class="fa-solid fa-magnifying-glass feature_icon"></i
+                >Flexible Location Lookup</span
+              >
+              <p>
+                Millions of locations can be looked up by city or region name,
+                ZIP code, IP address, or even using latitude and longitude
+                coordinates.
+              </p>
+            </li>
+
+            <li class="feature">
+              <span class="heading"
+                ><i class="fa-solid fa-shield-halved feature_icon"></i
+                >Bank-Level Security</span
+              >
+              <p>
+                All data streams sent to and from the weatherstack API are
+                secured using industry-standard 256-bit HTTPS (SSL) encryption.
+              </p>
+            </li>
+
+            <li class="feature">
+              <span class="heading"
+                ><i class="fa-solid fa-book feature_icon"></i>Extensive API
+                Documentation</span
+              >
+              <p>
+                An API is only as good as its documentation, which is why a
+                series of interactive code examples in multiple languages are
+                waiting for you.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="companies">
+      <div id="company_container">
+        <h3>
+          Join more than 75,000 companies worldwide using the weatherstack API
+        </h3>
+        <span
+          >We are proud of delivering accurate weather data to some of the
+          smartest brands out there.</span
+        >
+        <ul id="company_logos">
+          <li id="daimler"></li>
+          <li id="deloitte"></li>
+          <li id="ericsson"></li>
+          <li id="microsoft"></li>
+          <li id="schneider"></li>
+          <li id="warnerbros"></li>
+          <li id="wawa"></li>
+          <li id="canda"></li>
+          <li id="mckinsey"></li>
+          <li id="rimowa"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="cta">
+      <span>
+        Sign up for our Free Plan to get instant access to weather data
+      </span>
+      <a title="Sign up for free API access" href="/signup/free" class="">
+        Get Free API Access
+      </a>
+    </section>
+
+    <footer>
+      <div id="footer_container">
+        <div id="upper">
+          <div id="social_logo">
+            <div id="weatherstack_logo_footer">
+              <a href="">
+                <img
+                  src="https://weatherstack.com/site_images/weatherstack_logo_footer.png"
+                  alt="weatherstack"
+                />
+              </a>
+            </div>
+            <ul id="socail_media_logos">
+              <li>
+                <a href="https://github.com/apilayer/weatherstack"
+                  ><img
+                    src="https://weatherstack.com/site_images/github-original.svg"
+                    alt="github"
+                /></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/APILayer/"
+                  ><img
+                    src="https://weatherstack.com/site_images/facebook-original.svg"
+                    alt="facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/apilayer/"
+                  ><img
+                    src="https://weatherstack.com/site_images/instagram.png"
+                    alt="instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCwDncja3klyMhkKXWV1zoNQ"
+                  ><img
+                    src="https://weatherstack.com/site_images/youtube.png"
+                    alt="youtube"
+                /></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/apilayer/"
+                  ><img
+                    src="https://weatherstack.com/site_images/twitter-original.svg"
+                    alt="twitter"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQESw3_dz9mOEAAAAYMMykyAXLrKWTKL3Q6geO69ZLgKpP17rEgX7iUGjaigeEGynL1Rie-9w6to3tGsRihPBx-uPO7pGgRqEJ4FblxJDHlbg_VON-P_QB1Wzu_fRjrA8auiqyg=&original_referer=https://apilayer.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fapilayer%2F"
+                  ><img
+                    src="https://weatherstack.com/site_images/linkedin-original.svg"
+                    alt="linkedin"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <ul class="index">
+            <li class="footer_heading">PRODUCT</li>
+            <li class="footer_info"><a href="">Pricing</a></li>
+            <li class="footer_info"><a href="">List Your Api</a></li>
+            <li class="footer_info"><a href="">Why choose us?</a></li>
+            <li class="footer_info"><a href="">Marketplace</a></li>
+            <li class="footer_info"><a href="">Affiliates</a></li>
+          </ul>
+          <ul class="index">
+            <li class="footer_heading">DOCS & HELP</li>
+            <li class="footer_info"><a href="">Documentation</a></li>
+            <li class="footer_info"><a href="">Blog</a></li>
+            <li class="footer_info"><a href="">FAQs</a></li>
+            <li class="footer_info"><a href="">API Glossary</a></li>
+          </ul>
+          <ul class="index">
+            <li class="footer_heading">ACCOUNT</li>
+            <li class="footer_info"><a href="">Log In</a></li>
+            <li class="footer_info"><a href="">Forgot Password</a></li>
+            <li class="footer_info"><a href="">FREE Signup</a></li>
+          </ul>
+          <ul class="index">
+            <li class="footer_heading">GET IN TOUCH</li>
+            <li class="footer_info"><a href="">Contact</a></li>
+            <li class="footer_info"><a href="">Get a quote</a></li>
+          </ul>
+        </div>
+        <div id="lower">
+          <div id="copyright-link">
+            <a target="_blank" href="https://www.ideracorp.com/legal/APILayer"
+              >Imprint / Legal</a
+            >
+            |
+            <a
+              target="_blank"
+              href="https://www.ideracorp.com/Legal/APILayer/PrivacyStatement"
+              >Privacy</a
+            >
+            |
+            <a
+              target="_blank"
+              href="https://www.ideracorp.com/Legal/Terms-of-Use"
+              >Terms</a
+            >
+            |
+            <a
+              target="_blank"
+              href="https://www.ideracorp.com/Legal/APILayer/PrivacyStatement"
+              >Cookie Preference</a
+            >
+            | <a href="https://weatherstack.com/sitemap.php">Sitemap</a>
+          </div>
+          <div id="copyright-text">
+            <span
+              >© 2022 Weatherstack API, an
+              <a target="_blank" href="https://apilayer.com/">APILayer</a>
+              product. All rights reserved.</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+      var myNav = document.getElementById("my_nav");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop >= 350 ||
+          document.documentElement.scrollTop >= 350
+        ) {
+          myNav.classList.add("scroll");
+        } else {
+          myNav.classList.remove("scroll");
+        }
+      };
+    </script>
+  </body>
+</html>
+<script></script>
