@@ -2,20 +2,34 @@
   margin: 0;
   padding: 0;
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 header {
   background-image: url(https://weatherstack.com/site_images/mountains.svg),
     linear-gradient(135deg, #1f4e69 0, #164058 100%);
   background-size: cover;
   background-position: center;
   color: white;
+  width: 100%;
+  position: relative;
 }
 
 #nav_container {
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  width: 100%;
+  max-width: 100%;
   padding: 20px 0;
+  box-sizing: border-box;
 }
 
 #my_nav {
@@ -29,8 +43,7 @@ header {
 #header_main {
   display: flex;
   justify-content: center;
-  /* width: 100%; */
-  /* width: 1310px; */
+  width: 100%;
 }
 
 #header_container {
@@ -52,6 +65,8 @@ header {
 nav ul {
   display: flex;
   justify-content: space-around;
+  width: 60%;
+  max-width: 60%;
 }
 
 nav ul li {
@@ -59,7 +74,6 @@ nav ul li {
   font-size: 0.8rem;
   text-align: center;
   padding: 10px;
-  margin: 0 0.6em;
   white-space: nowrap;
 }
 
@@ -793,4 +807,12 @@ footer {
 
 #copyright-link a:hover {
   text-decoration: underline;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* or whatever max-width you prefer for your content */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
