@@ -32,6 +32,10 @@ header {
   box-sizing: border-box;
 }
 
+#logo {
+  margin-left: 20px;
+}
+
 #my_nav {
   display: flex;
   justify-content: center;
